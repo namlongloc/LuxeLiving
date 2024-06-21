@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nội thất LuxeLiving</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       .btn-mua button {
+        width: 100%; 
+        max-width: 200px; 
+    }
+    .tab-product {
+  position: relative;
+}
+
+.item-tab {
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  overflow: hidden; 
+  margin-bottom: 20px; 
+}
+
+.product_getcontent {
+  padding: 20px;
+  display: none; 
+}
+
+.toggle-btn {
+  cursor: pointer; 
+}
+
+.toggle-btn.active .minus {
+  display: inline-block;
+}
+
+.toggle-btn .plus {
+  display: inline-block; 
+}
+
+.minus, .plus {
+  display: none; 
+}
+
+.blur-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 999; 
+  display: none; 
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">
+          <img src="../images/logo.png" width="135px" height="125px" alt="logo" >
+        </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+          </button>
+  
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item "><a href="../index.html" class="nav-link">Trang chủ</a></li>
+            <div class="nav-item dropdown active">
+                <a href="../trangsanpham/trangsanpham.html " class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sản phẩm</a>
+                <div class="dropdown-menu bg-light mt-2">
+                  <a href="../trangsanpham/phongan.html" class="dropdown-item">Nội thất phòng ăn</a>
+                  <a href="../trangsanpham/phongkhach.html" class="dropdown-item">Nội thất phòng khách</a>
+                  <a href="../trangsanpham/phongngu.html" class="dropdown-item">Nội thất phòng ngủ</a>
+                  <a href="../trangsanpham/treem.html" class="dropdown-item">Nội thất trẻ em</a>
+                  <a href="../trangsanpham/vanphong.html" class="dropdown-item">Nội thất văn phòng</a>
+              </div>
+            </div>
+                <li class="nav-item"><a href="../websiteaboutinterior/about.html" class="nav-link">Về chúng tôi</a></li>
+                <li class="nav-item"><a href="../blog.html" class="nav-link">Thiết kế đặc trưng</a></li>
+              <li class="nav-item"><a href="../contact.html" class="nav-link">Liên hệ</a></li>
+              <li class="nav-item"><img src="../images/cart2.png" width="40px" height="40px" style="color: #fff;"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="home-slider js-fullheight owl-carousel">
+        <div class="slider-item js-fullheight" style="background-image:url(images/anhnen.jpeg);">
+            <div class="overlay"></div>
+          <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+            <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thông tin chi tiết về sản phẩm</h1>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+    <div class="container mt-5" style="margin-bottom: 40px;">
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Image Slider -->
+                <div id="product-slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <!--Ảnh 1-->
+                        <div class="carousel-item active">
+                            <figure class="zoom" onmousemove="zoom(event)" onmouseout="resetZoom(event)" ondblclick="openModal(event)" onmouseenter="resetAutoSlide()" onmouseleave="startAutoSlide()">
+                                <img src="images/phongngu/GN02.png" class="d-block w-100" alt="Tủ">
+                            </figure>
+                        </div>
+                        
+                    </div>
+                       <!-- Modal để hiển thị ảnh lớn -->
+                    <div id="myModal" class="modal">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                    <!-- Nút chuyển ảnh-->
+                    <a class="carousel-control-prev" href="#product-slider" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#product-slider" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <style>
+            
+                .modal {
+                    display: none; 
+                    position: fixed;
+                    z-index: 100; 
+                    padding-top: 60px;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.9); 
+                }
+                
+                .modal-content {
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    max-width: 700px;
+                }
+                
+                
+                .close {
+                    position: absolute;
+                    top: 15px;
+                    right: 35px;
+                    color: #fff;
+                    font-size: 40px;
+                    font-weight: bold;
+                    transition: 0.3s;
+                }
+                
+                .close:hover,
+                .close:focus {
+                    color: #bbb;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            .zoom {
+            overflow: hidden;
+            width: 100%;
+           
+            }
+
+            .zoom img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            
+            }
+
+            .zoom:hover img {
+            transform: scale(1.2);
+            }
+            
+            .save-price span {
+            background-color: red;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            }
+            </style>
+
+<!-- sự kiện zoom ảnh-->
+
+    <script>
+       
+        function zoom(event) {
+            var zoomer = event.currentTarget;
+            var img = zoomer.querySelector('img');
+            x = event.offsetX / zoomer.offsetWidth * 100;
+            y = event.offsetY / zoomer.offsetHeight * 100;
+            img.style.transformOrigin = x + '% ' + y + '%';
+        }
+        function openModal(event) {
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        const captionText = document.getElementById("caption");
+        const img = event.currentTarget.querySelector('img');
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        }
+    </script>
+
+
+            <div class="col-lg-6 product-info-container">
+                <!-- Product Details -->
+                <h2>
+                    Mẫu giường ngủ bọc vải nỉ hiện đại LX-GN02</h2>
+                <p><strong>Mô tả:</strong><br>
+                    Mã sản phẩm: LG-GN02<br>
+                    Giá sản phẩm: 16.000.000
+                </p>
+                <p>
+                    <strong>Giá:</strong>
+                    16.000.000đ
+                </p>
+                <div class="qty-ant clearfix custom-btn-number ">
+                    <label>Số lượng:</label>
+                    <div class="custom custom-btn-numbers clearfix input_number_product">
+                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty) & qty > 1 ) result.value--;return false;" class="btn-minus btn-primary btn-outline-primary" type="button">–</button>
+                        <input aria-label="Số lượng" type="text" class="qty input-text" id="qty" name="quantity" size="4" value="1" maxlength="3" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="if(this.value == 0)this.value=1;" />
+                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" class="btn-plus btn-primary btn-outline-primary" type="button">+</button>
+                    </div>
+                </div>
+                <!-- nút mua và giỏ hàng -->
+                <div class="btn-mua">
+                    <button type="button" class="btn btn-primary btn-outline-primary px-4 py-3 mt-3">Mua ngay</button>
+                </div>
+                <div class="btn-mua button_actions clearfix">
+                    <button type="submit" class="btn btn-primary btn-outline-primary  px-4 py-3 mt-3">
+                        <span class="txt-main text_1">Thêm vào giỏ hàng</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .btn-mua .btn.btn-primary.btn-outline-primary,
+.button_actions .btn.btn-primary.btn-outline-primary {
+    color: brown; 
+}
+
+.btn-mua .btn.btn-primary.btn-outline-primary:hover,
+.button_actions .btn.btn-primary.btn-outline-primary:hover {
+    color: #6c441e; 
+}
+</style>
+    <!-- thông tin sản phẩm -->
+    <div class="tab-product">
+        <div class="item-tab">
+            <h3 class="toggle-btn" >
+                Thông tin chi tiết sản phẩm
+                <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="20" height="2" viewBox="0 0 20 2" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 0V2H0V0H20Z" fill="black"/>
+                </svg>
+                <svg class="plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.83317 8.16666H17.3332V9.83332H9.83317V17.3333H8.1665V9.83332H0.666504V8.16666H8.1665V0.666656H9.83317V8.16666Z" fill="black"/>
+                </svg>
+            </h3>
+            <div class="rte product_getcontent" id="productDetails">
+                <div id="content">
+                    <!--<p>&nbsp;</p>-->
+                    <div style="text-align: justify; max-width: 800px; margin: 0 auto;">
+                        <p>Trong thế giới của thiết kế nội thất, có những sản phẩm đẹp đến mức khiến bạn phải trầm trồ, và bộ nội thất phòng ngủ đẹp LG-BPN578 chính là một ví dụ rõ ràng. Không chỉ đơn thuần là một bộ phòng ngủ, LG-BPN578 là một tuyệt tác của sự kết hợp giữa hiện đại và sang trọng, là biểu tượng của sự ấm áp và thoải mái. Nếu bạn đang tìm kiếm sự hoàn hảo cho căn phòng ngủ của mình, đừng bỏ lỡ cơ hội sở hữu ngay sản phẩm này.</p>
+<h2 style="text-align: center"><strong>ĐỒ GỖ NỘI THẤT PHÒNG NGỦ &#02; BỘ NỘI THẤT PHÒNG NGỦ ĐẸP GỖ CÔNG NGHIỆP LG-GN02</strong></h2>
+
+<h3 style="text-align: center"><strong>* Bộ Nội Thất Phòng Ngủ Đẹp &#02; LG-BPN578: Sự Kết Hợp Đỉnh Cao của Hiện Đại và Sang Trọng * </strong></h3>
+
+<p style="text-align: center"><img loading="lazy" decoding="async" class="aligncenter wp-image-19048 size-large" src="images/phongngu/GN02.png" alt="bộ giường tủ phòng ngủ đẹp hiện đại lg-bpn578 (2)" width="681" height="608" srcset="https://dogolegia.vn/wp-content/uploads/2023/05/noi-that-phong-ngu-dep-hien-dai-cao-cap-LG-BPN578-7-1024x768.jpg 1024w, https://dogolegia.vn/wp-content/uploads/2023/05/noi-that-phong-ngu-dep-hien-dai-cao-cap-LG-BPN578-7-300x225.jpg 300w, https://dogolegia.vn/wp-content/uploads/2023/05/noi-that-phong-ngu-dep-hien-dai-cao-cap-LG-BPN578-7-768x576.jpg 768w, https://dogolegia.vn/wp-content/uploads/2023/05/noi-that-phong-ngu-dep-hien-dai-cao-cap-LG-BPN578-7-1536x1152.jpg 1536w, https://dogolegia.vn/wp-content/uploads/2023/05/noi-that-phong-ngu-dep-hien-dai-cao-cap-LG-BPN578-7-900x675.jpg 900w, https://dogolegia.vn/wp-content/uploads/2023/05/noi-that-phong-ngu-dep-hien-dai-cao-cap-LG-BPN578-7.jpg 1800w" sizes="(max-width: 1020px) 100vw, 1020px" /> Bộ giường tủ gỗ công nghiệp cho phòng ngủ đẹp đơn giản LG-BPN578</p>
+<h3>Thiết Kế Hiện Đại Châu Âu</h3>
+<p>Mã sản phẩm LG-BPN578 mang trong mình nét đẹp rất Châu Âu. Với thiết kế hiện đại và tinh tế, bộ phòng ngủ này chắc chắn sẽ làm cho phòng ngủ của bạn trở nên lôi cuốn và đẳng cấp hơn. Mỗi chi tiết của sản phẩm này đều được chăm sóc đặc biệt, từ giường ngủ bọc da nỉ cao cấp kiểu dáng hiện đại đến tủ áo cánh kính sang trọng bậc nhất.</p>
+<h3>Giấc Ngủ Thư Thái</h3>
+<p>Giường ngủ bọc da LG-BPN578 không chỉ là một nơi để bạn nghỉ ngơi, mà còn là nơi để bạn tận hưởng giấc ngủ thật ngon và thư thái. Giường được thiết kế với sự cân nhắc đến sự thoải mái và hỗ trợ cho giấc ngủ của bạn. Chi tiết bọc da nỉ cao cấp không chỉ tạo cảm giác êm ái mà còn làm tôn lên vẻ đẹp sang trọng của sản phẩm.</p>
+<h3>Bàn Phấn Độc Đáo</h3>
+<p>Bàn phấn treo được thiết kế độc đáo và tinh tế, kết hợp cùng với gương tròn soi led phía sau, tạo nên một không gian thật mềm mại và lôi cuốn. Đôi khi, một bộ phòng ngủ đẹp cần một điểm nhấn độc đáo, và bàn phấn LG-BPN578 chắc chắn sẽ đáp ứng đầy đủ yêu cầu đó. Được thiết kế với sự tinh tế, bàn phấn này không chỉ là nơi bạn trang điểm mà còn là một tác phẩm nghệ thuật thực sự. Đặc biệt, ánh sáng LED phía sau giúp tạo ra không gian phấn sáng hơn, tạo điểm nhấn cuốn hút trong phòng ngủ của bạn.</p>
+<h3>Bậu Ngồi Nỉ Ấm Áp</h3>
+<p>Bộ nội thất phòng ngủ đẹp LG-BPN578 không chỉ dừng lại ở giường và bàn phấn. Phần bậu ngồi cũng được thiết kế vô cùng thoải mái với đệm nỉ êm ái. Đây là nơi lý tưởng để bạn thư giãn, đọc sách, hoặc thậm chí thả mình vào giấc ngủ ngắn trưa. Phần bậu ngồi này sẽ khiến bạn không muốn rời khỏi phòng ngủ, và nó là điểm đến ưa thích của mọi người.</p>
+<h3>Tiện Nghi Hiện Đại</h3>
+<p>Ngày nay, phòng ngủ không chỉ là nơi bạn ngủ mà còn là nơi giải trí và thư giãn. Bộ nội thất phòng ngủ đẹp LG-BPN578 đã tích hợp một tivi treo hiện đại, tạo ra một không gian giải trí tại chỗ. Bạn có thể thư giãn và xem phim yêu thích mà không cần rời khỏi phòng ngủ.</p>
+<h3>Chi Tiết Sắc Sảo</h3>
+<p>Sự quan tâm đến từng chi tiết là điều tạo nên sự độc đáo cho LG-BPN578. Phía tường đầu giường được ốp phẳng kết hợp ốp nan sau gương bàn phấn, tạo ra một không gian trang nhã và sang trọng. Bạn cũng có thể thêm một số lọ hoa hoặc cây nhỏ để làm cho phòng ngủ của bạn thêm phần tươi mát và thân thiện với môi trường.</p>
+<p>Bộ nội thất phòng ngủ đẹp LG-BPN578 chắc chắn là một lựa chọn đỉnh cao cho bất kỳ ai đang tìm kiếm một bộ phòng ngủ đẹp và sang trọng. Thiết kế hiện đại, sự thoải mái và tiện nghi hiện đại làm cho nó trở thành một tuyệt tác trong thế giới thiết kế nội thất.</p>
+
+
+                        <p style="text-align: center; font-size: 16px;">Ghi chú:</p>
+                        <p style="text-align: center; font-size: 16px;">- Giá đã bao gồm chi phí vận chuyển và lắp đặt nội thành Hà Nội</p>
+                        <p style="text-align: center; font-size: 16px;">- Thời gian giao hàng: từ 7 đến 10 ngày sau khi Quý khách đặt hàng</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .product-info-container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+.minus {
+    vertical-align: middle;
+}
+.product-details-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    
+}
+
+.tab-product {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    max-width: 1400px;
+    overflow: hidden; 
+}
+
+.item-tab {
+    padding: 10px;
+    border: 2px solid #e0e0e0; 
+    border-radius: 6px; 
+}
+</style>
+    
+<div class="productRelate">
+    <div class="block-title">
+        <h3>Sản phẩm cùng loại</h3>
+        <!-- SP liên quan 1 -->
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <a href="GN01.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongngu/GN01.png" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Mẫu giường ngủ bọc vải nỉ hiện đại LX-GN01</h5>
+                        <p class="card-text">Giá: 14,000,000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- SP liên quan 2 -->
+        <div class="col-md-3 mb-4">
+            <a href="GN02.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongngu/GN02.png" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Mẫu giường ngủ bọc vải nỉ hiện đại LX-GN02</h5>
+                        <p class="card-text">Giá: 16,000,000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- SP liên quan 3 -->
+        <div class="col-md-3 mb-4">
+            <a href="GN03.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongngu/TQA01.png" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Tủ quần áo cánh kính hiện đại LX-TQA01</h5>
+                        <p class="card-text">Giá: 24,000,000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- SP liên quan 4 -->
+        <div class="col-md-3 mb-4">
+            <a href="GN03.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongngu/GN03.jpg" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Giường ngủ bọc da cao cấp LX-GN03</h5>
+                        <p class="card-text">Giá: 47,500,000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+    
+    
+</div>
+    
+<style>
+    .block-title{
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    max-width: 1400px;
+    overflow: hidden; 
+    }
+    h3{
+        color:rgb(112, 28, 28);
+    }
+    .card-text{
+        color:rgb(112, 28, 28);
+    }
+    .carousel-item .zoom {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    }
+
+    
+    .carousel-item .zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+    .card .card-img-top {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    }
+</style> 
+
+<footer class=" ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5" style="margin-bottom: 0rem !important;">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+                    <h2 class="ftco-heading-2">Hệ thống chi nhánh</h2>
+                    <a href="https://www.facebook.com/kenli.vn/" class="ftco-heading-2" style="color: white;">Showroom Hà Nội</a>
+                    <p>- Trụ sở & Showroom 1: Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+                        <br><br>
+                        - Showroom 2: Số 4 Dịch Vọng Hậu, Q. Cầu Giấy
+                        <br><br>
+                        - Showroom 3: Số 18 Dịch Vọng Hậu, Q. Cầu Giấy
+                    </p>
+                    <a href="https://www.facebook.com/kenlihcm/" class="ftco-heading-2" style="color: white;">Showroom HCM</a>
+                    <p>- Trụ sở & Showroom: 69 - 71 Nguyễn Cơ Thạch, Khu đô thị Sala, An Lợi
+                        Đông, Quận 2
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4" style="margin-left: 20%; margin-top: 40px;">
+                    <h2 class="ftco-heading-2">Chính sách mua hàng</h2>
+                    <p>Hình thức thanh toán
+                    </p>
+                    <p>Chính sách giao hàng
+                    </p>
+                    <p>Chính sách bảo hành
+                    </p>
+                    <p>Chính sách bảo mật
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+                    <h2 class="ftco-heading-2">Liên Hệ</h2>
+                    <p>Công ty cổ phần đầu tư Phúc Thịnh
+                    </p>
+                    <p>Hotline: 0948426006
+                    </p>
+                    <p>Tổng đài CSKH: 1800 6398
+                    </p>
+                    <p>Email: info@Phúc Thịnh.vn
+                    </p>
+                    <br>
+                    <h2 class="ftco-heading-2">Kết nối với Phúc Thịnh</h2>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3" style="margin-top: -22px !important;">
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61560753257228"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-pinterest"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/luxeliving2024_?igsh=MWt4dWJkbXhuOHZxYw%3D%3D"><span class="icon-instagram"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <p style="    margin-top: -69px;">Công ty cổ phần đầu tư Phúc Thịnh <br>
+                    Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+                </p>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+          </div>
+        </div>
+    </div>
+</footer>
+    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nội thất LuxeLiving</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       .btn-mua button {
+        width: 100%; 
+        max-width: 200px; 
+    }
+    .tab-product {
+  position: relative;
+}
+
+.item-tab {
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  overflow: hidden; 
+  margin-bottom: 20px; 
+}
+
+.product_getcontent {
+  padding: 20px; 
+  display: none; 
+}
+
+.toggle-btn {
+  cursor: pointer; 
+}
+
+.toggle-btn.active .minus {
+  display: inline-block; 
+}
+
+.toggle-btn .plus {
+  display: inline-block; 
+}
+
+.minus, .plus {
+  display: none; 
+}
+
+.blur-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 999; 
+  display: none; 
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">
+          <img src="../images/logo.png" width="135px" height="125px" alt="logo" >
+        </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+          </button>
+  
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item "><a href="../index.html" class="nav-link">Trang chủ</a></li>
+            <div class="nav-item dropdown active">
+                <a href="../trangsanpham/trangsanpham.html " class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sản phẩm</a>
+                <div class="dropdown-menu bg-light mt-2">
+                  <a href="../trangsanpham/phongan.html" class="dropdown-item">Nội thất phòng ăn</a>
+                  <a href="../trangsanpham/phongkhach.html" class="dropdown-item">Nội thất phòng khách</a>
+                  <a href="../trangsanpham/phongngu.html" class="dropdown-item">Nội thất phòng ngủ</a>
+                  <a href="../trangsanpham/treem.html" class="dropdown-item">Nội thất trẻ em</a>
+                  <a href="../trangsanpham/vanphong.html" class="dropdown-item">Nội thất văn phòng</a>
+              </div>
+            </div>
+                <li class="nav-item"><a href="../websiteaboutinterior/about.html" class="nav-link">Về chúng tôi</a></li>
+                <li class="nav-item"><a href="../blog.html" class="nav-link">Thiết kế đặc trưng</a></li>
+              <li class="nav-item"><a href="../contact.html" class="nav-link">Liên hệ</a></li>
+              <li class="nav-item"><img src="../images/cart2.png" width="40px" height="40px" style="color: #fff;"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="home-slider js-fullheight owl-carousel">
+        <div class="slider-item js-fullheight" style="background-image:url(images/anhnen.jpeg);">
+            <div class="overlay"></div>
+          <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+            <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thông tin chi tiết về sản phẩm</h1>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+    <div class="container mt-5" style="margin-bottom: 40px;">
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Image Slider -->
+                <div id="product-slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <!--Ảnh 1-->
+                        <div class="carousel-item active">
+                            <figure class="zoom" onmousemove="zoom(event)" onmouseout="resetZoom(event)" ondblclick="openModal(event)" onmouseenter="resetAutoSlide()" onmouseleave="startAutoSlide()">
+                                <img src="images/phongkhach/TR02.png" class="d-block w-100" alt="Tủ">
+                            </figure>
+                        </div>
+                        
+                    </div>
+                       <!-- Modal để hiển thị ảnh lớn -->
+                    <div id="myModal" class="modal">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                    <!-- Nút chuyển ảnh-->
+                    <a class="carousel-control-prev" href="#product-slider" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#product-slider" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <style>
+            
+                .modal {
+                    display: none; 
+                    position: fixed;
+                    z-index: 100; 
+                    padding-top: 60px;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.9); 
+                }
+                
+                
+                .modal-content {
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    max-width: 700px;
+                }
+                
+                
+                .close {
+                    position: absolute;
+                    top: 15px;
+                    right: 35px;
+                    color: #fff;
+                    font-size: 40px;
+                    font-weight: bold;
+                    transition: 0.3s;
+                }
+                
+                .close:hover,
+                .close:focus {
+                    color: #bbb;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            .zoom {
+            overflow: hidden;
+            width: 100%;
+            
+            }
+
+            .zoom img {
+            transition: transform 0.5s ease;
+            width: 100%;
+           
+            }
+
+            .zoom:hover img {
+            transform: scale(1.2);
+            }
+            
+            .save-price span {
+            background-color: red;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            }
+            </style>
+
+<!-- sự kiện zoom ảnh-->
+
+    <script>
+        
+        function zoom(event) {
+            var zoomer = event.currentTarget;
+            var img = zoomer.querySelector('img');
+            x = event.offsetX / zoomer.offsetWidth * 100;
+            y = event.offsetY / zoomer.offsetHeight * 100;
+            img.style.transformOrigin = x + '% ' + y + '%';
+        }
+        function openModal(event) {
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        const captionText = document.getElementById("caption");
+        const img = event.currentTarget.querySelector('img');
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        }
+    </script>
+
+
+            <div class="col-lg-6 product-info-container">
+                <!-- Product Details -->
+                <h2>Tủ rượu gỗ công nghiệp hiện đại LX-TR02</h2>
+                <p><strong>Mô tả:</strong><br>
+                    Mã sản phẩm: LG-TR038<br>
+                    
+                    Giá sản phẩm:25.000.000
+                </p>
+                <p>
+                    <strong>Giá:</strong>
+                    25.000.000đ
+                
+                </p>
+                <div class="qty-ant clearfix custom-btn-number ">
+                    <label>Số lượng:</label>
+                    <div class="custom custom-btn-numbers clearfix input_number_product">
+                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty) & qty > 1 ) result.value--;return false;" class="btn-minus btn-primary btn-outline-primary" type="button">–</button>
+                        <input aria-label="Số lượng" type="text" class="qty input-text" id="qty" name="quantity" size="4" value="1" maxlength="3" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="if(this.value == 0)this.value=1;" />
+                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" class="btn-plus btn-primary btn-outline-primary" type="button">+</button>
+                    </div>
+                </div>
+                <!-- nút mua và giỏ hàng -->
+                <div class="btn-mua">
+                    <button type="button" class="btn btn-primary btn-outline-primary px-4 py-3 mt-3">Mua ngay</button>
+                </div>
+                <div class="btn-mua button_actions clearfix">
+                    <button type="submit" class="btn btn-primary btn-outline-primary  px-4 py-3 mt-3">
+                        <span class="txt-main text_1">Thêm vào giỏ hàng</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .btn-mua .btn.btn-primary.btn-outline-primary,
+.button_actions .btn.btn-primary.btn-outline-primary {
+    color: brown; 
+}
+
+.btn-mua .btn.btn-primary.btn-outline-primary:hover,
+.button_actions .btn.btn-primary.btn-outline-primary:hover {
+    color: #6c441e; 
+}
+</style>
+    <!-- thông tin sản phẩm -->
+    <div class="tab-product">
+        <div class="item-tab">
+            <h3 class="toggle-btn" >
+                Thông tin chi tiết sản phẩm
+                <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="20" height="2" viewBox="0 0 20 2" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 0V2H0V0H20Z" fill="black"/>
+                </svg>
+                <svg class="plus" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.83317 8.16666H17.3332V9.83332H9.83317V17.3333H8.1665V9.83332H0.666504V8.16666H8.1665V0.666656H9.83317V8.16666Z" fill="black"/>
+                </svg>
+            </h3>
+            <div class="rte product_getcontent" id="productDetails">
+                <div id="content">
+                    <!--<p>&nbsp;</p>-->
+                    <div style="text-align: justify; max-width: 800px; margin: 0 auto;">
+                        <p style="text-align: justify">Một mẫu tủ rượu gỗ công nghiệp hiện đại cực đẹp sẽ biến không gian phòng khách của bạn trở nên tuyệt vời hơn bao giờ hết. Thiết kế theo xu hướng thế giới vô cùng hiện đại sang trọng đồng thời vẫn trẻ trung. Tông màu chủ đạo là màu đen phối trắng. Màu đen giúp tủ rượu trở nên sang trọng và nổi bật các chai rượu quý của bạn. Còn phối màu trắng sẽ giúp cho tủ rượu trẻ trung. Phối cùng hai cánh kính tượng trưng cho sự hiện đại sang trọng. Lê Gia đã thiết kế đi kèm đèn led nổi bật cả không gian. Hãy nhanh chân qua ngày Lê Gia để chọn màu đặt hàng theo nhu cầu của bạn.</p>
+<h2 style="text-align: center"><strong>ĐỒ GỖ NỘI THẤT PHÒNG KHÁCH &#8211; MẪU TỦ RƯỢU GỖ CÔNG NGHIỆP PHÒNG KHÁCH ĐẸP SANG TRỌNG LG-TR021</strong></h2>
+
+<h3 style="text-align: center"><strong>* Tủ Rượu Gỗ Công Nghiệp LG-TR021: Đẳng Cấp và Sang Trọng Cho Phòng Khách Hiện Đại</strong></h3>
+
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-4433 size-full" src="images/phongkhach/TR02.png" alt="mẫu tủ rượu gỗ công nghiệp cho phòng khách hiện đại trẻ trung lg-tr02 (3)" width="800" height="800"></p>
+<p style="text-align: center">Mẫu tủ rượu gỗ đẹp phòng khách hiện đại sống động LG-TR02</p>
+<h3>Đẳng Cấp Từ Tủ Rượu Gỗ Công Nghiệp LG-TR021</h3>
+<p>Tủ rượu không chỉ là một vật dụng phục vụ việc lưu trữ rượu mà còn là một phần không thể thiếu trong việc tạo nên vẻ đẹp và đẳng cấp cho phòng khách của bạn. Với thiết kế hiện đại và tinh tế, tủ rượu LG-TR02 mang đến sự hoàn hảo cho không gian nội thất của bạn.</p>
+<h3>Thiết Kế Hiện Đại và Sang Trọng</h3>
+<p>Tủ rượu LG-TR021 là một mẫu tủ rượu gỗ công nghiệp độc đáo và đẳng cấp. Thiết kế này không chỉ thể hiện sự sang trọng mà còn thể hiện sự hiện đại và tinh tế. Với tông màu chủ đạo là đen kết hợp với trắng, tủ rượu LG-TR02 đem lại cảm giác mạnh mẽ và tinh tế trong cùng một sản phẩm.</p>
+<p>Màu đen luôn là biểu tượng của sự sang trọng và đẳng cấp. Khi bạn đặt tủ rượu LG-TR021 trong phòng khách, nó sẽ tự nhiên hòa quyện vào không gian với sự quý phái riêng. Màu đen cũng tạo điểm nhấn cho các chai rượu quý, khiến chúng nổi bật hơn trong bộ sưu tập của bạn.</p>
+<p>Phối màu trắng trong thiết kế tạo ra một sự cân bằng đầy tinh tế. Màu trắng là biểu tượng của sự tươi trẻ và sự trong sáng. Sự kết hợp giữa màu đen và màu trắng tạo nên một sự hài hòa độc đáo, giúp tủ rượu trở nên trẻ trung và hiện đại.</p>
+<h3>Cánh Kính Tượng Trưng Cho Hiện Đại</h3>
+<p>Một trong những điểm nổi bật của tủ rượu LG-TR031 là việc sử dụng cánh kính trong thiết kế. Hai cánh kính tượng trưng trên cửa tủ không chỉ thêm tính thẩm mỹ mà còn giúp bạn dễ dàng nhìn thấy bộ sưu tập rượu của mình. Những chai rượu quý, những chi tiết tinh tế trên chai rượu sẽ trở nên dễ dàng quan sát và trưng bày.</p>
+<p>Cánh kính tượng trưng cũng tạo cảm giác thoải mái, mở ra không gian và sự thông thoáng cho tủ rượu. Điều này giúp tủ rượu không chỉ là nơi lưu trữ mà còn là một phần của nội thất phòng khách, đồng thời tạo nên sự chuyên nghiệp và tinh tế trong việc trưng bày rượu.</p>
+<h3>Đèn LED Nổi Bật</h3>
+<p>Để tạo điểm nhấn cho tủ rượu LG-TR021, Lê Gia đã thiết kế đi kèm đèn LED nổi bật. Đèn LED sẽ tạo ra một ánh sáng ấm áp và mềm mại, tôn lên vẻ đẹp của các chai rượu trong tủ. Bạn có thể bật đèn LED để tạo không gian ấm cúng và sang trọng trong buổi tiệc tối hoặc khi bạn muốn thư giãn và thưởng thức một ly rượu sau một ngày làm việc mệt mỏi.</p>
+<h3>Tùy Chọn Màu Sắc</h3>
+<p>Với tủ rượu LG-TR021, bạn có nhiều tùy chọn màu sắc để lựa chọn phù hợp với không gian và sở thích cá nhân của bạn. Màu sắc có thể được tùy chỉnh theo nhu cầu, giúp bạn tạo nên một sản phẩm riêng biệt và độc đáo cho phòng khách của mình.</p>
+<p>Tủ Rượu Gỗ Công Nghiệp LG-TR021 là sự kết hợp hoàn hảo giữa đẳng cấp và sự hiện đại. Với thiết kế tinh tế, màu sắc sang trọng, cánh kính hiện đại, và đèn LED nổi bật, tủ rượu này sẽ là một điểm nhấn không thể thiếu trong không gian phòng khách của bạn. Nếu bạn đang tìm kiếm một mẫu tủ rượu độc đáo, đẳng cấp và hiện đại cho ngôi nhà của mình, thì tủ rượu LG-TR031 là lựa chọn hoàn hảo. Với khả năng tùy chỉnh màu sắc, bạn có thể dễ dàng điều chỉnh nó để phù hợp với phong cách nội thất và sở thích cá nhân của bạn. Không chỉ là một nơi lý tưởng để lưu trữ rượu quý, tủ rượu này còn là một tác phẩm nghệ thuật độc đáo và điểm nhấn trong không gian phòng khách của bạn.</p>
+                        <p style="text-align: center; font-size: 16px;">Ghi chú:</p>
+                        <p style="text-align: center; font-size: 16px;">- Giá đã bao gồm chi phí vận chuyển và lắp đặt nội thành Hà Nội</p>
+                        <p style="text-align: center; font-size: 16px;">- Thời gian giao hàng: từ 7 đến 10 ngày sau khi Quý khách đặt hàng</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .product-info-container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+.minus {
+    vertical-align: middle;
+}
+.product-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.tab-product {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    max-width: 1400px;
+    overflow: hidden; 
+}
+
+.item-tab {
+    padding: 10px;
+    border: 2px solid #e0e0e0; 
+    border-radius: 6px; 
+}
+</style>
+    
+<div class="productRelate">
+    <div class="block-title">
+        <h3>Sản phẩm cùng loại</h3>
+        <!-- SP liên quan 1 -->
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <a href="SF-03.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongkhach/SF03.jpg" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Mẫu sofa da hiện đại cao cấp LX-SF03</h5>
+                        <p class="card-text">Giá: 24.440.000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- SP liên quan 2 -->
+        <div class="col-md-3 mb-4">
+            <a href="KTV01.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongkhach/KTV01.png" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Kệ TiVi gỗ công nghiệp hiện đại LX-KTV01</h5>
+                        <p class="card-text">Giá: 19.500.000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- SP liên quan 3 -->
+        <div class="col-md-3 mb-4">
+            <a href="TR02.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongkhach/TR02.png" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Tủ rượu gỗ công nghiệp hiện đại LX-TR02</h5>
+                        <p class="card-text">Giá: 25.000.000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- SP liên quan 4 -->
+        <div class="col-md-3 mb-4">
+            <a href="KTV02.html" class="card-link">
+                <div class="card">
+                    <img src="images/phongkhach/KTV02.jpg" class="card-img-top" alt="lienquan">
+                    <div class="card-body">
+                        <h5 class="card-title">Kệ Tivi gỗ óc chó cao cấp LX-KTV02</h5>
+                        <p class="card-text">Giá: 30.000.000đ</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+    
+    
+</div>
+    
+<style>
+    .block-title{
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    max-width: 1400px;
+    overflow: hidden; 
+    }
+    h3{
+        color:rgb(112, 28, 28);
+    }
+    .card-text{
+        color:rgb(112, 28, 28);
+    }
+    .carousel-item .zoom {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    }
+
+    
+    .carousel-item .zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+    .card .card-img-top {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    }
+</style> 
+<footer class=" ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5" style="margin-bottom: 0rem !important;">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+                    <h2 class="ftco-heading-2">Hệ thống chi nhánh</h2>
+                    <a href="https://www.facebook.com/kenli.vn/" class="ftco-heading-2" style="color: white;">Showroom Hà Nội</a>
+                    <p>- Trụ sở & Showroom 1: Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+                        <br><br>
+                        - Showroom 2: Số 4 Dịch Vọng Hậu, Q. Cầu Giấy
+                        <br><br>
+                        - Showroom 3: Số 18 Dịch Vọng Hậu, Q. Cầu Giấy
+                    </p>
+                    <a href="https://www.facebook.com/kenlihcm/" class="ftco-heading-2" style="color: white;">Showroom HCM</a>
+                    <p>- Trụ sở & Showroom: 69 - 71 Nguyễn Cơ Thạch, Khu đô thị Sala, An Lợi
+                        Đông, Quận 2
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4" style="margin-left: 20%; margin-top: 40px;">
+                    <h2 class="ftco-heading-2">Chính sách mua hàng</h2>
+                    <p>Hình thức thanh toán
+                    </p>
+                    <p>Chính sách giao hàng
+                    </p>
+                    <p>Chính sách bảo hành
+                    </p>
+                    <p>Chính sách bảo mật
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+                    <h2 class="ftco-heading-2">Liên Hệ</h2>
+                    <p>Công ty cổ phần đầu tư Phúc Thịnh
+                    </p>
+                    <p>Hotline: 0948426006
+                    </p>
+                    <p>Tổng đài CSKH: 1800 6398
+                    </p>
+                    <p>Email: info@Phúc Thịnh.vn
+                    </p>
+                    <br>
+                    <h2 class="ftco-heading-2">Kết nối với Phúc Thịnh</h2>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3" style="margin-top: -22px !important;">
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61560753257228"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-pinterest"></span></a></li>
+                        <li class="ftco-animate"><a href="https://www.instagram.com/luxeliving2024_?igsh=MWt4dWJkbXhuOHZxYw%3D%3D"><span class="icon-instagram"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <p style="    margin-top: -69px;">Công ty cổ phần đầu tư Phúc Thịnh <br>
+                    Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+                </p>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+          </div>
+        </div>
+    </div>
+</footer>
+ 
+    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

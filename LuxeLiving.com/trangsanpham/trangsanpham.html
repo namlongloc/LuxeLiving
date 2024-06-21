@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nội thất LuxeLiving</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        a {
+       text-decoration: none;
+     }
+ 
+     a:hover {
+       color: ffd1dcd2;
+     }
+ 
+     body {
+       font-family: "Arial", sans-serif;
+       margin: 0;
+       padding: 0;
+     }
+ 
+     h1 {
+       text-align: center;
+       margin-top: 20px;
+     }
+ 
+     .product-list-container {
+       display: grid;
+       grid-template-columns: 20% 80%;
+       grid-gap: 20px;
+       padding: 20px;
+       width: 900px;
+     }
+ 
+     .filter-container {
+       background-color: #cccccc34;
+       padding: 10px;
+       color: rgb(97, 97, 97);
+       border-radius: 10px;
+     }
+     .filter-container h3{
+       font-weight: bold;
+       font-size: 20px;
+       font-family: "Arial", sans-serif;
+     }
+ 
+     #product-list {
+       position: relative;
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       grid-gap: 20px;
+     }
+ 
+     .pagination {
+       margin-top: 10px;
+       text-align: center;
+     }
+ 
+     .pagination a {
+       display: inline-block;
+       margin-left: 5px;
+       padding: 5px 10px;
+       background-color: #f1f1f1;
+       text-decoration: none;
+       color: #333333;
+     }
+ 
+     .pagination a.current {
+       background-color: #ccc;
+       color: #fff;
+     }
+ 
+     /* Sản phẩm */
+     .product {
+       position: relative;
+       border: 1px solid #fff;
+       padding: 10px;
+       /* text-align: center; */
+       border-radius: 5px;
+       background-color: #fff;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     }
+ /*chỗ sửa*/
+     .product img {
+       max-width: 290px;
+       height: 290px;
+       transition: filter 0.3s ease-in-out;
+       border-radius: 10px;
+       object-fit: cover;
+     }
+ 
+     .product h3 {
+       margin-top: 10px;
+       font-size: 15px;
+       color: #414141;
+       font-weight: bold;
+     }
+ 
+     .product .price {
+       /* font-weight: bold; */
+       margin-top: 10px;
+       font-size: 16px;
+       color: #C01B0F;
+     }
+ 
+ /*thời gian bảo hành*/
+     .original-time {
+       margin-top: 10px;
+       padding: 10px 20px;
+       /*background-color: #ffd1dc;*/
+       color: #070707;
+       font-size: 12px;
+       font-weight:lighter;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       text-align: center;
+       /* width: fit-content; */
+     }
+     .add-to-cart{
+        margin-top: 10px;
+       padding: 10px 20px;
+       background-color: #B19470;
+       color: #070707;
+       font-size: 12px;
+       font-weight:lighter;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       text-align: center;
+     }
+ 
+ /*nút xem nhanh*/
+     .quick-view {
+       position: absolute;
+       top: 45%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       background-color: #8E5F3D;
+       padding: 10px;
+       display: none;
+       cursor: pointer;
+       z-index: 1;
+       width: fit-content;
+     }
+ 
+     .product:hover .quick-view,
+     .product:hover .add-to-cart {
+       display: block;
+     }
+ 
+     .product-item {
+       flex: 0 0 auto;
+       width: 300px;
+       height: 300px;
+       margin-right: 10px;
+       scroll-snap-align: start;
+       background-color: #fff;
+       border: 1px solid #ffffff;
+       border-radius: 5px;
+       padding: 10px;
+       /* text-align: center; */
+       box-shadow: 0 2px 4px rgb(255, 255, 255);
+     }
+ 
+     .product-img {
+       width: 200px;
+       height: 200px;
+       margin: 0 auto;
+     }
+ 
+     .product-item h3 {
+       margin-top: 10px;
+       font-size: 16px;
+       color: black;
+     }
+ 
+     .product-item p {
+       margin: 5px 0;
+     }
+ 
+     .product-item p.price {
+       font-weight: bold;
+       color: black;
+       font-size: 14px;
+     }
+ 
+     /* code sửa */
+ 
+     /* Sản phẩm nổi bật */
+     .product-container {
+       display: flex;
+       overflow-x: scroll;
+       scroll-snap-type: x mandatory;
+       scrollbar-width: none;
+       /* Ẩn thanh cuộn */
+       -ms-overflow-style: none;
+       /* Ẩn thanh cuộn trên Microsoft Edge */
+       padding: 20px;
+       background-color: #f1f1f1;
+     }
+ 
+     .product-item {
+       flex: 0 0 auto;
+       width: 300px;
+       height: 300px;
+       margin-right: 10px;
+       scroll-snap-align: start;
+       background-color: #fff;
+       border: 1px solid #ffffff;
+       border-radius: 5px;
+       padding: 10px;
+       text-align: center;
+       box-shadow: 0 2px 4px rgb(255, 255, 255);
+     }
+ 
+     .product-item h3 {
+       margin-top: 10px;
+       font-size: 16px;
+       color: black;
+     }
+ 
+     .product-item p {
+       margin: 5px 0;
+     }
+ 
+     .product-item p.price {
+       font-weight: bold;
+       color: black;
+       font-size: 14px;
+     }
+ 
+     /* phân trang */
+     .page-link {
+       margin-right: 5px;
+     }
+ 
+     /* CSS Xem nhanh */
+     #product {
+       display: flex;
+       align-items: center;
+     }
+ 
+     .container {
+       padding: 16px;
+     }
+ 
+     .modal {
+       display: none;
+       position:fixed;
+       /* Stay in place */
+       z-index: 1;
+       /* Sit on top */
+       left: 0px;
+       top: 0px;
+       width: 100%;
+       height: 100%;
+       overflow: auto;
+       /* Enable scroll if needed */
+       background-color: rgb(0, 0, 0);
+       /* Fallback color */
+       background-color: rgba(0, 0, 0, 0.4);
+       /* Black w/ opacity */
+       padding-top: 60px;
+     }
+/*sale */
+     .sale-badge {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: #ff0000;
+      color: #fff;
+      padding: 2px 5px;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+    .product .price .original-price {
+      text-decoration: line-through;
+      color: #999999;
+    }
+ 
+/*chỗ này sửa vị trí xem nhanh*/    
+     .modal-content {
+       background-color: #fefefe;
+       margin: auto;
+       border: 2px solid #f4d2d2;
+       width: 80%;
+       position: fixed;
+       top: 250px;
+       left: 200px;
+     }
+ 
+     .product-image {
+       flex: 0 0 200px;
+       margin-right: 20px;
+     }
+ 
+     .product-image img {
+       width: 300px;
+       height: 250px;
+       object-fit: cover;
+ 
+     }
+ 
+    .close {
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       font-size: 28px;
+       font-weight: bold;
+       color: #888;
+       cursor: pointer;
+     }
+ 
+    .close:hover,
+    .close:focus {
+     color: #000;
+     }
+ 
+     button {
+       background-color: #d1ffe6d2;
+       color: white;
+       padding: 14px 20px;
+       margin: 8px 0;
+       border: none;
+       cursor: pointer;
+       width: 100%;
+       border-radius: 10px;
+     }
+ 
+     button:hover {
+       opacity: 0.8;
+     }
+     </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+        <img src="../images/logo.png" width="135px" height="125px" alt="logo" >
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item "><a href="../index.html" class="nav-link">Trang chủ</a></li>
+          <div class="nav-item dropdown active">
+            <a href="trangsanpham.html " class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sản phẩm</a>
+            <div class="dropdown-menu bg-light mt-2">
+              <a href="phongan.html" class="dropdown-item">Nội thất phòng ăn</a>
+              <a href="phongkhach.html" class="dropdown-item">Nội thất phòng khách</a>
+              <a href="phongngu.html" class="dropdown-item">Nội thất phòng ngủ</a>
+              <a href="treem.html" class="dropdown-item">Nội thất trẻ em</a>
+              <a href="vanphong.html" class="dropdown-item">Nội thất văn phòng</a>
+            </div>
+          </div>
+              <li class="nav-item"><a href="../websiteaboutinterior/about.html" class="nav-link">Về chúng tôi</a></li>
+              <li class="nav-item"><a href="../blog.html" class="nav-link">Thiết kế đặc trưng</a></li>
+            <li class="nav-item"><a href="../contact.html" class="nav-link">Liên hệ</a></li>
+            <li class="nav-item"><img src="../images/cart2.png" width="40px" height="40px" style="color: #fff;"></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="home-slider js-fullheight owl-carousel">
+      <div class="slider-item js-fullheight" style="background-image:url(../images/anhnen2.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+          <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Chúng tôi tạo ra những kiến trúc tuyệt vời.</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Để mỗi ngày được sống đúng và đầy đủ trong tâm hồn. Vì chúng tôi hiểu rõ, mục đích cuối cùng cho những cố gắng để giúp bản thân hạnh phúc hơn!</p>
+            <p><a href="../websiteaboutinterior/about.html" class="btn btn-white btn-outline-white px-4 py-3 mt-3">Thêm về chúng tôi</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="slider-item js-fullheight" style="background-image:url(../images/anhnen.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+          <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Đem lại giá trị cốt lõi cho ngôi nhà của bạn</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Để mỗi ngày được sống đúng và đầy đủ trong tâm hồn. Vì chúng tôi hiểu rõ, mục đích cuối cùng cho những cố gắng để giúp bản thân hạnh phúc hơn!</p>
+            <p><a href="../websiteaboutinterior/about.html" class="btn btn-white btn-outline-white px-4 py-3 mt-3">Thêm về chúng tôi</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="slider-item js-fullheight" style="background-image:url(../images/anhnen3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+          <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Tự tay tạo nên ngôi nhà của bạn</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Để mỗi ngày được sống đúng và đầy đủ trong tâm hồn. Vì chúng tôi hiểu rõ, mục đích cuối cùng cho những cố gắng để giúp bản thân hạnh phúc hơn!</p>
+            <p><a href="../websiteaboutinterior/about.html" class="btn btn-white btn-outline-white px-4 py-3 mt-3">Thêm về chúng tôi</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <div class="product-list-container">
+      <div class="filter-container">
+        <h3>Chất liệu:</h3>
+        <label><input type="checkbox" class="filter-material" value="wood1"> Gỗ công nghiệp</label><br>
+        <label><input type="checkbox" class="filter-material" value="wood2"> Gỗ tự nhiên</label><br>
+        <label><input type="checkbox" class="filter-material" value="leather"> Da</label><br>
+        <label><input type="checkbox" class="filter-material" value="flannel"> Vải nỉ</label><br>
+        <label><input type="checkbox" class="filter-material" value="glass"> Kính</label><br>
+        <label><input type="checkbox" class="filter-material" value="stone"> Đá</label><br>
+
+
+        <h3>Sản phẩm:</h3>
+        <label><input type="checkbox" class="filter-type" value="bed"> Giường</label><br>
+        <label><input type="checkbox" class="filter-type" value="cabinet1"> Tủ bếp</label><br>
+        <label><input type="checkbox" class="filter-type" value="cabinet2">Tủ quần áo </label><br>
+        <label><input type="checkbox" class="filter-type" value="cabinet3"> Tủ rượu</label><br>
+        <label><input type="checkbox" class="filter-type" value="cabinet4"> Kệ phòng khách</label><br>
+        <label><input type="checkbox" class="filter-type" value="stand"> Kệ TV</label><br>
+        <label><input type="checkbox" class="filter-type" value="table1"> Bàn ăn</label><br>
+        <label><input type="checkbox" class="filter-type" value="table2"> Bàn trang điểm</label><br>
+        <label><input type="checkbox" class="filter-type" value="desk"> Bàn học</label><br>
+        <label><input type="checkbox" class="filter-type" value="room">Mẫu nội thất trẻ em</label><br>
+        <label><input type="checkbox" class="filter-type" value="sofa"> Ghế sofa</label><br>
+
+        <h3>Giá:</h3>
+        <div class="price-filter">
+          <label><input type="radio" name="price" value="5000-15000">5,000,000-15,000,000</label><br>
+          <label><input type="radio" name="price" value="15000-30000">15,000,000-30,000,000</label><br>
+          <label><input type="radio" name="price" value="30000-50000">30,000,000-50,000,000</label><br>
+          <label><input type="radio" name="price" value="50000-100000">50,000,000-100,000,000</label><br>
+          <label><input type="radio" name="price" value="all">Tất cả</label><br>
+        </div>
+      </div>
+
+      <div>
+        <div class="filters">
+          <div class="filter-item">
+            <label for="sort">Sắp xếp:</label>
+            <select id="sort" onchange="sortProducts()">
+              <option value="price-high-low">Tùy chọn</option>
+              <option value="price-high-low">Giá cao đến thấp</option>
+              <option value="price-low-high">Giá thấp đến cao</option>
+              <option value="newest">Mới nhất</option>
+              <option value="popularity">Quan tâm nhiều</option>
+            </select>
+          </div>
+        </div>
+   <!--sanpham-->
+   <div id="product-list">
+    <div class="product" data-price="14000" data-material="flannel" data-type="bed" data-date="2022-09-01"
+      data-views="20">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongngu/GN01-1.png" alt="Sản phẩm 1">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/GN01.html">
+          <h3>Mẫu giường ngủ bọc vải nỉ hiện đại LX-GN01</LG-01></h3>
+        </a>
+        <!--Giá sale-->
+        <p class="price"><span class="original-price">Giá 15,000,000 VND</span> Giá: 14,000,000 VND</p>
+        <button onclick="toggleModal('01')" class="quick-view">Xem nhanh</button>
+        <div class="sale-badge">Sale</div>
+      </div>
+      <div id="01" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('01')">&times;</span>
+          <div id="product">
+            <img src="images/phongngu/GN01.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Mẫu giường ngủ bọc vải nỉ hiện đại LX-GN01</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 14,000,000VND</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="16000" data-material="flannel" data-type="bed" data-date="2022-12-03"
+      data-views="17">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongngu/GN02.png" alt="Sản phẩm 2">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/GN02.html">
+          <h3>Mẫu giường ngủ bọc vải nỉ hiện đại LX-GN02 </h3>
+        </a>
+        <p class="price"> Giá:16,000,000 VND</p>
+        <button onclick="toggleModal('02')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="02" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('02')">&times;</span>
+          <div id="product">
+            <img src="images/phongngu/GN02.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Mẫu giường ngủ bọc vải nỉ hiện đại LX-GN02</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 16,000,000VND</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="17000" data-material="room" data-type="room" data-date="2023-01-12"
+      data-views="40">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/treem/MNT01.png" alt="Sản phẩm 3">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/MNT01.html">
+          <h3>Mẫu nội thất phòng ngủ cho bé trai LX-MNT01</h3>
+        </a>
+        <p class="price">Giá: 17,000,000 VND</p>
+        <button onclick="toggleModal('03')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="03" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('03')">&times;</span>
+          <div id="product">
+            <img src="images/treem/MNT01.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Bộ bàn ăn mặt đá 8 ghế gỗ sồi cao cấp cực đẹp LX-BA01</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 10,000,000VND</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="14000" data-material="wood1" data-type="cabinet1" data-date="2023-03-02"
+      data-views="50">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongan/TB01.png" alt="Sản phẩm 4">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TB01.html">
+          <h3>Tủ bếp hiện đại gỗ công nghiệp LX-TB01</h3>
+        </a>
+        <p class="price"><span class="original-price">Giá 14,000,000 VND</span> Giá: 11,200,000 VND</p>
+        <button onclick="toggleModal('04')" class="quick-view">Xem nhanh</button>
+        <div class="sale-badge">Sale</div>
+       <!--<div class="sale-badge">Sale</div>--> 
+      </div>
+      <div id="04" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('04')">&times;</span>
+          <div id="product">
+            <img src="images/phongan/TB01.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Tủ bếp hiện đại gỗ công nghiệp LX-TB01</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 14,000,000 VND</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <div class="product" data-price="32000" data-material="wood1" data-type="cabinet1" data-date="2023-01-01"
+      data-views="50">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongan/TB02.png" alt="Sản phẩm 5">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TB02.html">
+          <h3>Tủ bếp hiện đại đẳng cấp gỗ công nghiệp LX-TB02</h3>
+        </a>
+        <p class="price"><span class="original-price">Giá 32,000,000 VND</span>Giá: 25,600,000 VNĐ</p>
+        <button onclick="toggleModal('05')" class="quick-view">Xem nhanh</button>
+        <div class="sale-badge">Sale</div>
+      </div>
+      <div id="05" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('05')">&times;</span>
+          <div id="product">
+            <img src="images/phongan/TB02.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Tủ bếp hiện đại đẳng cấp gỗ công nghiệp LX-TB02</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 32,000,000</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="24000" data-material="glass" data-type="cabinet2" data-date="2023-06-07"
+      data-views="15">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongngu/TQA01.png" alt="Sản phẩm 6">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TQA01.html">
+          <h3>Tủ quần áo cánh kính hiện đại LX-TQA01</h3>
+        </a>
+        <p class="price">Giá: 24,000,000 VND</p>
+        <button onclick="toggleModal('06')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="06" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('06')">&times;</span>
+          <div id="product">
+            <img src="images/phongngu/TQA01.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Tủ quần áo cánh kính hiện đại LX-TQA01</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá:24,000,000</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="18500" data-material="leather" data-type="sofa" data-date="2023-01-01"
+      data-views="25">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongkhach/SF03.jpg" alt="Sản phẩm 7">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/SF-03.html">
+          <h3>Mẫu sofa da hiện đại cao cấp LX-SF03</h3>
+        </a>
+        <p class="price">Giá: 18,500,000 VND</p>
+        <button onclick="toggleModal('07')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="07" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('07')">&times;</span>
+          <div id="product">
+            <img src="images/phongkhach/SF03.jpg" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Mẫu sofa da hiện đại cao cấp LX-SF03</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 18,500,000</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="17250" data-material="room" data-type="room" data-date="2023-04-12"
+      data-views="100">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/treem/MNT03.png" alt="Sản phẩm 8">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/MNT03.html">
+          <h3>Mẫu nội thất phòng ngủ cho bé gái LX-MNT03</h3>
+        </a>
+        <p class="price">Giá: 17,250,000 VND</p>
+        <button onclick="toggleModal('08')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="08" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('08')">&times;</span>
+          <div id="product">
+            <img src="images/treem/MNT03.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Mẫu nội thất phòng ngủ cho bé gái LX-MNT03</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 17,250,000 VND</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 18 tháng</p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="50500" data-material="stone" data-type="table1" data-date="2022-08-10"
+      data-views="80">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongan/BA01.jpg" alt="Sản phẩm 9">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/BA01.html">
+          <h3>Bộ bàn ăn mặt đá cao cấp 6 ghế LX-BA01</h3>
+        </a>
+        <p class="price">Giá: 50,5000,000 VNĐ</p>
+        <button onclick="toggleModal('09')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="09" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('09')">&times;</span>
+          <div id="product">
+            <img src="images/phongan/BA01.jpg" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Bộ bàn ăn mặt đá cao cấp 6 ghế LX-BA01</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 50,500,000 VNĐ</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 18 tháng
+              </p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  <div class="product" data-price="23450" data-material="wood2"  data-type="desk" data-date="2012-07-01"
+      data-views="85">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/vanphong/BLV01.jpg" alt="Sản phẩm 10">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/BLV01.html">
+          <h3>Bàn làm việc nhập khẩu cao cấp hiện đại LX-BLV01</h3>
+        </a>
+        <p class="price">Giá: 23,450,000 VNĐ</p>
+        <button onclick="toggleModal('10')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="10" class="modal"> 
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('10')">&times;</span>
+          <div id="product">
+            <img src="images/vanphong/BLV01.jpg" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Bàn làm việc nhập khẩu cao cấp hiện đại LX-BLV01</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 23,450,000 VNĐ</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng
+              </p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  <div class="product" data-price="17600" data-material="wood1" data-type="desk" data-date="2024-03-03"
+      data-views="70">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/treem/BH02.png" alt="Sản phẩm 11">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/BH02.html">
+          <h3>Bộ bàn học gỗ công nghiệp hiện đại LX-BH02</h3>
+        </a>
+        <p class="price">Giá: 17,600,00 VNĐ</p>
+        <button onclick="toggleModal('11')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="11" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('11')">&times;</span>
+          <div id="product">
+            <img src="images/treem/BH02.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;">Bộ bàn học gỗ công nghiệp hiện đại LX-BH02</h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 17,600,000 VNĐ</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng
+              </p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  <div class="product" data-price="21000" data-material="wood1" data-type="desk" data-date="2012-01-01"
+      data-views="150">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/vanphong/BH03.png" alt="Sản phẩm 12">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/BH03.html">
+          <h3>Bộ bàn làm việc gỗ công nghiệp hiện đại LX-BH03</h3>
+        </a>
+        <p class="price">Giá: 21,000,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      <div id="12" class="modal">
+        <form class="modal-content" method="post">
+          <span class="close" onclick="toggleModal('12')">&times;</span>
+          <div id="product">
+            <img src="images/vanphong/BH03.png" alt="Product Image" style="width: 200px; height: 200px;">
+            <div style="margin-left: 10px;">
+              <h4 style=" font-size: 18px; margin-top: 0;margin-left: 5px ;"></h4>
+              <h4 style=" font-weight: bold; margin-top: 5px;">Giá: 21,000,000 VNĐ</h4>
+              <p style="  margin-top: 5px; color: #999999;">Nhà sản xuất: LuxeLiving | Thời gian bảo hành: 12 tháng
+              </p>
+              <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="product" data-price="19500" data-material="wood1" data-type="stand" data-date="2022-12-02"
+      data-views="67">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongkhach/KTV01.png" alt="Sản phẩm 13">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/KTV01.html">
+          <h3>Kệ TiVi gỗ công nghiệp hiện đại LX-KTV01</h3>
+        </a>
+        <p class="price">Giá: 19,500,000 VNĐ</p>
+        <button onclick="toggleModal('13')" class="quick-view">Xem nhanh</button>
+      </div>
+    </div>
+
+      <div class="product" data-price="25000" data-material="wood1" data-type="cabinet3" data-date="2023-05-04"
+      data-views="25">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongkhach/TR02.png" alt="Sản phẩm 14">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TR02.html">
+          <h3>Tủ rượu gỗ công nghiệp hiện đại LX-TR02</h3>
+        </a>
+        <p class="price">Giá: 25,000,000 VNĐ</p>
+        <button onclick="toggleModal('14')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="32000" data-material="room" data-type="room" data-date="2022-06-05"
+      data-views="110">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/treem/MNT02.png" alt="Sản phẩm 15">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/MNT02.html">
+          <h3>Mẫu nội thất phòng ngủ trẻ em cao cấp LX-MNT02</h3>
+        </a>
+        <p class="price">Giá: 32,000,000 VNĐ</p>
+        <button onclick="toggleModal('15')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="30000" data-material="wood2" data-type="stand" data-date="2022-12-06"
+      data-views="150">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongkhach/KTV02.jpg" alt="Sản phẩm 16">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/KTV02.html">
+          <h3>Kệ Tivi gỗ óc chó cao cấp LX-KTV02</h3>
+        </a>
+        <p class="price">Giá: 30,000,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+<!---->      
+      <div class="product" data-price="18600" data-material="stone" data-type="desk" data-date="2023-04-10"
+      data-views="80">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/vanphong/BLV02.jpg" alt="Sản phẩm 17">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/BLV02.html">
+          <h3>Bàn làm việc mặt đá cao cấp LX-BLV02</h3>
+        </a>
+        <p class="price">Giá: 18,600,000 VNĐ</p>
+        <button onclick="toggleModal('17')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="50000" data-material="stone" data-type="stand" data-date="2022-12-12"
+      data-views="55">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongkhach/LX-KTV03.jpg" alt="Sản phẩm 18">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/KTV03.html">
+          <h3>Kệ Tivi mặt đá cao cấp LX-KTV03</h3>
+        </a>
+        <p class="price">Giá: 50,000,000 VNĐ</p>
+        <button onclick="toggleModal('18')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="45000" data-material="stone" data-type="table1" data-date="2012-01-01"
+      data-views="105">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongan/BA03.jpg" alt="Sản phẩm 19">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/BA03.html">
+          <h3>Bàn ăn mặt đá cao cấp LX-BA03</h3>
+        </a>
+        <p class="price">Giá: 45,000,000 VNĐ</p>
+        <button onclick="toggleModal('19')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="42000" data-material="wood2" data-type="cabinet1" data-date="2023-12-09"
+      data-views="120">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongan/TB03.jpg" alt="Sản phẩm 20">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TB03.html">
+          <h3>Tủ bếp gỗ sồi cao cấp LX-TB03</h3>
+        </a>
+        <p class="price"><span class="original-price">Giá: 42,000,000 VNĐ</span>Giá: 33,600,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+        <div class="sale-badge">Sale</div>
+      </div>
+      </div>
+
+      <div class="product" data-price="15000" data-material="wood1" data-type="cabinet4" data-date="2023-11-03"
+      data-views="70">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongkhach/TPK01.jpg" alt="Sản phẩm 21">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TPK01.html">
+          <h3>Tủ trang trí phòng khách gỗ công nghiệp hiện đại LX-TPK01</h3>
+        </a>
+        <p class="price">Giá: 15,000,000 VNĐ</p>
+        <button onclick="toggleModal('21')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="47500" data-material="leather" data-type="bed" data-date="2022-12-11"
+      data-views="47">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongngu/GN03.jpg" alt="Sản phẩm 22">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/GN03.html">
+          <h3>Giường ngủ bọc da cao cấp LX-GN03</h3>
+        </a>
+        <p class="price">Giá: 47,500,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="26000" data-material="wood1" data-type="table2" data-date="2012-01-01"
+      data-views="35">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongngu/BTD01.jpg" alt="Sản phẩm 23">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/BTD01.html">
+          <h3>Bàn trang điểm trong phòng ngủ gỗ công nghiệp hiện đại LX-BTĐ01</h3>
+        </a>
+        <p class="price">Giá: 26,000,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="80000" data-material="room" data-type="room" data-date="2012-01-01"
+      data-views="125">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/treem/MNT04.jpg" alt="Sản phẩm 24">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/MNT04.html">
+          <h3>Mẫu nội thất phòng ngủ trẻ em hiện đại LX-MNT04</h3>
+        </a>
+        <p class="price">Giá: 80,000,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="39450" data-material="wood1" data-type="cabinet1" data-date="2012-01-01"
+      data-views="24">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongan/TB04.jpg" alt="Sản phẩm 25">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TB04.html">
+          <h3>Tủ bếp gỗ công nghiệp cao cấp LX-TB04</h3>
+        </a>
+        <p class="price"><span class="original-price">Giá: 39,450,000 VNĐ</span> Giá: 31,560,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+        <div class="sale-badge">Sale</div>
+      </div>
+      </div>
+
+      <div class="product" data-price="46700" data-material="glass" data-type="cabinet1" data-date="2024-04-05"
+      data-views="55">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongan/TB05.jpg" alt="Sản phẩm 26">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TB05.html">
+          <h3>Tủ bếp kính hiện đại LX-TB05</h3>
+        </a>
+        <p class="price">Giá: 46,700,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="52000" data-material="wood1" data-type="cabinet2" data-date="2012-01-01"
+      data-views="30">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongngu/TQA02.jpg" alt="Sản phẩm 27">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TQA02.html">
+          <h3>Tủ quần áo chữ U gỗ công nghiệp cao cấp LX-TQA02</h3>
+        </a>
+        <p class="price">Giá: 52,000,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+
+      <div class="product" data-price="22785" data-material="glass" data-type="cabinet2" data-date="2023-11-05"
+      data-views="55">
+      <img style="filter: brightness(100%);" onmouseover="this.style.filter='brightness(80%)';"
+        onmouseout="this.style.filter='brightness(100%)';" src="images/phongngu/TQA03.jpg" alt="Sản phẩm 28">
+      <div style="text-align: center;">
+        <a href="../trangchitietsp/TQA03.html">
+          <h3>Tủ quần áo cánh kính hiện đại LX-TQA03</h3>
+        </a>
+        <p class="price">Giá: 22,785,000 VNĐ</p>
+        <button onclick="toggleModal('12')" class="quick-view">Xem nhanh</button>
+      </div>
+      </div>
+    </div>
+    <div class="pagination" style="margin-top: 10px;">
+      <ul>
+        <a href="#" class="page-link">1</a>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">3</a>
+      </ul>
+    </div>
+   </div>
+  </div>
+
+  <footer class=" ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+      <div class="row mb-5" style="margin-bottom: 0rem !important;">
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+            <h2 class="ftco-heading-2">Hệ thống chi nhánh</h2>
+            <a href="https://www.facebook.com/kenli.vn/" class="ftco-heading-2" style="color: white;">Showroom Hà Nội</a>
+            <p>- Trụ sở & Showroom 1: Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+              <br><br>
+              - Showroom 2: Số 4 Dịch Vọng Hậu, Q. Cầu Giấy
+              <br><br>
+              - Showroom 3: Số 18 Dịch Vọng Hậu, Q. Cầu Giấy
+            </p>
+            <a href="https://www.facebook.com/kenlihcm/" class="ftco-heading-2" style="color: white;">Showroom HCM</a>
+            <p>- Trụ sở & Showroom: 69 - 71 Nguyễn Cơ Thạch, Khu đô thị Sala, An Lợi
+              Đông, Quận 2
+            </p>
+          </div>
+        </div>
+  
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4" style="margin-left: 20%; margin-top: 40px;">
+            <h2 class="ftco-heading-2">Chính sách mua hàng</h2>
+            <p>Hình thức thanh toán
+            </p>
+            <p>Chính sách giao hàng
+            </p>
+            <p>Chính sách bảo hành
+            </p>
+            <p>Chính sách bảo mật
+            </p>
+            <br>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+            <h2 class="ftco-heading-2">Liên Hệ</h2>
+            <p>Công ty cổ phần đầu tư Phúc Thịnh
+            </p>
+            <p>Hotline: 0948426006
+            </p>
+            <p>Tổng đài CSKH: 1800 6398
+            </p>
+            <p>Email: info@Phúc Thịnh.vn
+            </p>
+            <br>
+            <h2 class="ftco-heading-2">Kết nối với Phúc Thịnh</h2>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3" style="margin-top: -22px !important;">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61560753257228"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-pinterest"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.instagram.com/luxeliving2024_?igsh=MWt4dWJkbXhuOHZxYw%3D%3D"><span class="icon-instagram"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-youtube"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+  
+          <p style="    margin-top: -69px;">Công ty cổ phần đầu tư Phúc Thịnh <br>
+            Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--Cài chatbot-->	
+  <script type="text/javascript" src="https://cdn.fchat.vn/assets/embed/webchat.js?id=6673fcc8cc517a261e08415c" async="async"></script>
+          <script src="js/jquery.min.js"></script>
+          <script src="js/jquery-migrate-3.0.1.min.js"></script>
+          <script src="js/popper.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/jquery.easing.1.3.js"></script>
+          <script src="js/jquery.waypoints.min.js"></script>
+          <script src="js/jquery.stellar.min.js"></script>
+          <script src="js/owl.carousel.min.js"></script>
+          <script src="js/jquery.magnific-popup.min.js"></script>
+          <script src="js/aos.js"></script>
+          <script src="js/jquery.animateNumber.min.js"></script>
+          <script src="js/bootstrap-datepicker.js"></script>
+          <script src="js/jquery.timepicker.min.js"></script>
+          <script src="js/scrollax.min.js"></script>
+          <script src="js/main.js"></script>
+          <script>
+            // Pagination
+       document.addEventListener('DOMContentLoaded', function () {
+        // Lấy danh sách các sản phẩm
+        var productList = document.getElementById('product-list').children;
+
+        // Lấy danh sách các link phân trang
+        var pageLinks = document.getElementsByClassName('page-link');
+
+        // Xử lý sự kiện khi nhấp vào một link phân trang
+        for (var i = 0; i < pageLinks.length; i++) {
+          pageLinks[i].addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Lấy số trang từ nội dung của link
+            var page = parseInt(this.textContent);
+
+            // Ẩn tất cả các sản phẩm
+            for (var j = 0; j < productList.length; j++) {
+              productList[j].style.display = 'none';
+            }
+
+            // Hiển thị các sản phẩm ở trang tương ứng
+            var startIndex = (page - 1) * 12; // 12 là số sản phẩm hiển thị trên mỗi trang
+            var endIndex = startIndex + 12;
+            for (var k = startIndex; k < endIndex; k++) {
+              if (productList[k]) {
+                productList[k].style.display = 'block';
+              }
+            }
+          });
+        }
+      });
+      // Cập nhật chiều dài của filter-container
+      var filterContainer = document.querySelector('.filter-container');
+      filterContainer.style.height = numberOfProducts * 70 + 'px';
+
+      // Cập nhật vị trí sticky của filter-container
+      var productContainer = document.querySelector('.product-list-container');
+      var productContainerRect = productContainer.getBoundingClientRect();
+      filterContainer.style.top = productContainerRect.top + 'px';
+
+      // Cập nhật vị trí sticky của pagination-container
+      var paginationContainer = document.querySelector('.pagination');
+      paginationContainer.style.top = productContainerRect.bottom + 'px';
+          //sắp xếp sản phẩm
+        function sortProducts() {
+        var sortCriteria = document.getElementById('sort').value;
+        var productList = document.getElementById('product-list');
+        var products = Array.from(productList.getElementsByClassName('product'));
+
+        if (sortCriteria === 'price-high-low') {
+          products.sort(function (a, b) {
+            var priceA = parseInt(a.getAttribute('data-price'));
+            var priceB = parseInt(b.getAttribute('data-price'));
+            return priceB - priceA;
+          });
+        } else if (sortCriteria === 'price-low-high') {
+          products.sort(function (a, b) {
+            var priceA = parseInt(a.getAttribute('data-price'));
+            var priceB = parseInt(b.getAttribute('data-price'));
+            return priceA - priceB;
+          });
+        } else if (sortCriteria === 'newest') {
+          products.sort(function (a, b) {
+            var dateA = new Date(a.getAttribute('data-date'));
+            var dateB = new Date(b.getAttribute('data-date'));
+            return dateB - dateA;
+          });
+        } else if (sortCriteria === 'popularity') {
+          products.sort(function (a, b) {
+            var viewsA = parseInt(a.getAttribute('data-views'));
+            var viewsB = parseInt(b.getAttribute('data-views'));
+            return viewsB - viewsA;
+          });
+        }
+
+        products.forEach(function (product) {
+          productList.appendChild(product);
+        });
+      }
+  
+             // Hiện xem nhanh
+
+                function toggleModal(modalId) {
+                     var modal = document.getElementById(modalId);
+                     modal.style.display = modal.style.display === "block" ? "none" : "block";
+                     }
+
+             // Đóng xem nhanh
+                window.onclick = function (event) {
+                     var modals = document.getElementsByClassName("modal");
+                     for (var i = 0; i < modals.length; i++) {
+                    var modal = modals[i];
+                         if (event.target == modal) {
+                         modal.style.display = "none";
+                      }
+                    }
+                }
+          // Filter sản phẩm
+      document.addEventListener("DOMContentLoaded", function () {
+        var priceFilters = document.querySelectorAll(".price-filter input");
+        var products = document.querySelectorAll(".product");
+
+        for (var j = 0; j < priceFilters.length; j++) {
+          priceFilters[j].addEventListener("click", handlePriceFilterClick);
+        }
+
+        function handlePriceFilterClick(event) {
+          var selectedFilter = event.target;
+          var selectedPriceRange = selectedFilter.value;
+
+          // Xóa lớp ẩn/hiện tất cả các sản phẩm
+          for (var k = 0; k < products.length; k++) {
+            var product = products[k];
+            var productPrice = parseInt(product.getAttribute("data-price"));
+
+            if (selectedPriceRange === "all" || isProductWithinPriceRange(productPrice, selectedPriceRange)) {
+              product.style.display = "block";
+            } else {
+              product.style.display = "none";
+            }
+          }
+        }
+
+        function isProductWithinPriceRange(price, range) {
+          var priceRange = range.split("-");
+          var minPrice = parseInt(priceRange[0]);
+          var maxPrice = parseInt(priceRange[1]);
+          return price >= minPrice && price <= maxPrice;
+        }
+      });
+
+      const filterPriceCheckboxes = document.querySelectorAll('.filter-price');
+      const filterMaterialCheckboxes = document.querySelectorAll('.filter-material');
+      const filterTypeCheckboxes = document.querySelectorAll('.filter-type');
+      const products = document.querySelectorAll('.product');
+
+      function filterProducts() {
+        const selectedPrices = Array.from(filterPriceCheckboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => parseInt(checkbox.value));
+
+        const selectedMaterials = Array.from(filterMaterialCheckboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+
+        const selectedTypes = Array.from(filterTypeCheckboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+
+        products.forEach(product => {
+          const price = parseInt(product.dataset.price);
+          const material = product.dataset.material;
+          const type = product.dataset.type;
+
+          const meetsPriceCriteria = selectedPrices.length === 0 || selectedPrices.includes(price);
+          const meetsMaterialCriteria = selectedMaterials.length === 0 || selectedMaterials.includes(material);
+          const meetsTypeCriteria = selectedTypes.length === 0 || selectedTypes.includes(type);
+
+          if (meetsPriceCriteria && meetsMaterialCriteria && meetsTypeCriteria) {
+            product.style.display = 'block';
+          } else {
+            product.style.display = 'none';
+          }
+        });
+      }
+
+      filterPriceCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterProducts);
+      });
+
+      filterMaterialCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterProducts);
+      });
+
+      filterTypeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterProducts);
+      });
+          // Hiển thị sau khi lọc
+          var numberOfProducts = 12;
+     </script>
+</body>
+
+</html>

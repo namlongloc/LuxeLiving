@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nội thất LuxeLiving</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .project img{
+      width: 100%;
+      height: 500px;
+      object-fit:cover;
+      }
+      .text h3{
+        text-align: center;
+        margin-top: 3px;
+      }
+    .image-row {
+    display: flex;
+    gap: 10px; /* khoảng cách giữa các ảnh */
+}
+
+  .image-row img {
+      width: 295px;; /* độ rộng của mỗi ảnh */
+      height: 100px;
+      border: 2px solid #ccc; /* viền cho ảnh */
+      border-radius: 5px; /* bo tròn góc của ảnh */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* đổ bóng cho ảnh */
+      transition: transform 0.3s ease; /* hiệu ứng khi di chuột qua */
+  }
+  /*popup*/
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup {
+  background: #fff;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  /* Adjusted top value to bring it closer */
+  right: 5px;
+  /* Adjusted right value to bring it closer */
+  cursor: pointer;
+  color: #301919;
+  /* Set the color to white */
+  font-size: 20px;
+  /* Adjust the font size */
+  font-weight: bold;
+  /* Add bold style */
+}
+
+.countdown {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.imgpop {
+  max-width: 1000px;
+  max-height: 1000px;
+}
+
+/*popup*/
+   .image-row img:hover {
+       transform: scale(1.05); /* phóng to ảnh khi di chuột qua*/
+    }
+/*form*/
+form {
+  width: auto;
+  height: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-image: url(images/anhform.jpg);
+  object-fit: cover;
+}
+
+.form-group {
+  display: flex; /* Sử dụng Flexbox */
+  flex-direction: column;
+  margin-bottom: 25px; /* Khoảng cách giữa các nhóm trường */
+}
+
+.form-group label {
+  width: 50%; /* Chiều rộng cho nhãn */
+  margin-right: 10px; /* Khoảng cách giữa nhãn và input */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 750px; /* Chiều rộng cho input và textarea */
+}
+.form-container {
+  display: flex; /* Sử dụng Flexbox */
+  flex-direction: column; /* Sắp xếp theo hàng dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+}
+.form-container h2{
+  font-weight: bold;
+  color: #563E35;
+}
+button {
+  background-color: #563E35;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  .ftco-section-ftc-no-pb{
+    margin-bottom: 20px;
+  }
+  .cart-icon{
+	height: 100px;
+	width: 100px;
+  }
+    </style>
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/logo.png" width="150px" height="150px" alt="logo" >
+			  </a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item active"><a href="index.html" class="nav-link">Trang chủ</a></li>
+            <div class="nav-item dropdown">
+              <a href="trangsanpham/trangsanpham.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sản phẩm</a>
+              <div class="dropdown-menu bg-light mt-2">
+                  <a href="trangsanpham/phongan.html" class="dropdown-item">Nội thất phòng ăn</a>
+                  <a href="trangsanpham/phongkhach.html" class="dropdown-item">Nội thất phòng khách</a>
+                  <a href="trangsanpham/phongngu.html" class="dropdown-item">Nội thất phòng ngủ</a>
+                  <a href="trangsanpham/treem.html" class="dropdown-item">Nội thất trẻ em</a>
+                  <a href="trangsanpham/vanphong.html" class="dropdown-item">Nội thất văn phòng</a>
+              </div>
+            </div>
+	        	<li class="nav-item"><a href="websiteaboutinterior/about.html" class="nav-link">Về chúng tôi</a></li>
+	        	<li class="nav-item"><a href="blog.html" class="nav-link">Thiết kế đặc trưng</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
+			  <li class="nav-item"><img src="images/cart2.png" width="40px" height="40px" style="color: #fff;"></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="home-slider js-fullheight owl-carousel">
+      <div class="slider-item js-fullheight" style="background-image:url(images/anhnen2.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+          <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Chúng tôi tạo ra những kiến trúc tuyệt vời.</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Để mỗi ngày được sống đúng và đầy đủ trong tâm hồn. Vì chúng tôi hiểu rõ, mục đích cuối cùng cho những cố gắng để giúp bản thân hạnh phúc hơn!</p>
+            <p><a href="websiteaboutinterior/about.html" class="btn btn-white btn-outline-white px-4 py-3 mt-3">Thêm về chúng tôi</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="slider-item js-fullheight" style="background-image:url(images/anhnen.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+          <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Đem lại giá trị cốt lõi cho ngôi nhà của bạn</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Bộ sưu tập nội thất đẳng cấp, chất lượng vượt trội, vẻ đẹp bền lâu.</p>
+            <p><a href="websiteaboutinterior/about.html" class="btn btn-white btn-outline-white px-4 py-3 mt-3">Thêm về chúng tôi</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="slider-item js-fullheight" style="background-image:url(images/anhnen3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+          <div class="col-md-7 text ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Siêu ưu đãi hè</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">"Ưu đãi đặc biệt mùa hè. Giảm giá lên đến 20% cho mọi sản phẩm. Đừng bỏ lỡ cơ hội sở hữu nội thất mơ ước"</p>
+            <p><a href="websiteaboutinterior/about.html" class="btn btn-white btn-outline-white px-4 py-3 mt-3">Thêm về chúng tôi</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+		
+    <section class="ftco-services bg-light">
+			<div class="container">
+				<div class="row">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-idea"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Dịch Vụ Chuyên Nghiệp</h3>
+                <p>Tư vấn tận tình, có tâm và Thi công – Giao hàng nhanh chóng</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-compass-symbol"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Chất Lượng Hàng Đầu</h3>
+                <p>Nguyên liệu nhập khẩu, nguồn gốc rõ ràng, đảm bảo chất lượng</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-layers"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Uy tín số 1</h3>
+                <p>Yên tâm mua sắm, giải toả lo âu với chính sách bảo hành và bảo trì dài hạn</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+			</div>
+		</section>
+		<!--Phần popup-->
+	<div class="overlay" id="overlay">
+		<div class="popup">
+			<span class="close-btn" onclick="closePopup()">×</span>
+			<img src="images/anhsale.png" alt="Khuyến Mãi"  class="imgpop">
+			<div class="countdown" id="countdown"></div>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function () {
+			var endDate = new Date("July 5, 2024 00:00:00").getTime(); // Đặt ngày kết thúc khuyến mãi
+			function updateCountdown() {
+				var now = new Date().getTime();
+				var timeLeft = endDate - now;
+				if (timeLeft <= 0) {
+					closePopup();
+					return;
+				}
+				var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+				document.getElementById('countdown').innerHTML = "Thời gian còn lại: " + days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây";
+			}
+			setInterval(updateCountdown, 1000); // Cập nhật thời gian còn lại mỗi giây
+			showPopup();
+		};
+
+		function showPopup() {
+			document.getElementById('overlay').style.display = 'flex';
+		}
+
+		function closePopup() {
+			document.getElementById('overlay').style.display = 'none';
+		}
+	</script>
+	<!--Phần popup-->
+
+		<section class="ftco-section-ftc-no-pb">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-md-5 p-md-5 img img-2" style="background-image: url(images/anhtest.jpg);">
+					</div>
+					<div class="col-md-7 wrap-about pb-md-5 ftco-animate">
+	          <div class="heading-section mb-5 pl-md-5 heading-section-with-line">
+	          	<div class="pl-md-5 ml-md-5">
+		          	<span class="subheading">Tại sao chọn LuxeLiving ?</span>
+		            <h2 class="mb-4">LUXELIVING - NÂNG TẦM KHÔNG GIAN SỐNG VỚI NỘI THẤT CAO CẤP</h2>
+	            </div>
+	          </div>
+	          <div class="pl-md-5 ml-md-5 mb-5">
+							<p>Luxeliving là điểm đến lý tưởng cho những ai đang tìm kiếm nội thất cao cấp, sang trọng và đẳng cấp cho ngôi nhà của mình. Chúng tôi cung cấp đa dạng các sản phẩm nội thất được chế tác từ những vật liệu cao cấp nhất, mang đến sự tinh tế và hoàn hảo cho mọi không gian sống.</p>
+							<p>Với tinh thần"Sự hài lòng của khách hàng là niềm vui của chúng tôi", chúng tôi mong muốn mang đến cho bạn một không giản bạn cảm thấy thực sự thoải mái và là nơi bạn muốn trở về để nghỉ ngơi, thư giãn. Vì thế chúng tôi luôn cố gắng tạo ra những sản phẩm độc đáo, hoàn hảo tạo ra sự khác biệt cho ngôi nhà của bạn.</p>
+							<p><a href="trangsanpham/trangsanpham.html" class="btn-custom">Liên hệ với chúng tôi <span class="ion-ios-arrow-forward"></span></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row d-md-flex align-items-center justify-content-center">
+    			<div class="col-lg-4">
+    				<div class="heading-section pl-md-5 heading-section-white">
+	          	<div class="pl-md-5 ml-md-5 ftco-animate">
+		          	<span class="subheading">Một số</span>
+		            <h2 class="mb-4">Sự thật thú vị</h2>
+	            </div>
+	          </div>
+    			</div>
+    			<div class="col-lg-8">
+    				<div class="row d-md-flex align-items-center">
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="2">0</strong>
+		                <span>Số năm kinh nghiệm</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="500">0</strong>
+		                <span>Khách hàng hài lòng</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="230">0</strong>
+		                <span>Số dự án hoàn thành</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18 text-center">
+		              <div class="text">
+		                <strong class="number" data-number="300">0</strong>
+		                <span>Working Days</span>
+		              </div>
+		            </div>
+		          </div>
+	          </div>
+          </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-7 heading-section ftco-animate">
+            <h2 class="mb-4">Dự án của chúng tôi</h2>
+            <p>LuxeLiving Interior tự hào là một trong những đơn vị tiên phong trong lĩnh vực thiết kế và cung cấp nội thất cao cấp. Hãy cùng chúng tôi biến ý tưởng của bạn thành hiện thực và tạo nên những không gian sống và làm việc hoàn hảo nhất.</p>
+        </div>
+    	</div>
+    	<div class="container-wrap">
+    		<div class="row no-gutters">
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/noithatchungcu.jpg"  class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<h3>Nội thất chung cư</h3>
+	    				</div>
+	    				<a href="images/noithatchungcu.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/noithatbietthu.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<h3>Nội thất biệt thự</h3>
+	    				</div>
+	    				<a href="images/noithatbietthu.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/noithatvanphong.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<h3>Nội thất văn phòng</h3>
+	    				</div>
+	    				<a href="images/noithatvanphong.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/noithatnhapho.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<h3>Nội thất nhà phố</h3>
+	    				</div>
+	    				<a href="images/noithatnhapho.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-2">
+        <div class="col-md-7 heading-section ftco-animate">
+          <h2 class="mb-4">Đối tác quan trọng của chúng tôi</h2>
+          <p>Chúng tôi tự hào hợp tác với nhiều đối tác quan trọng trong ngành nội thất cao cấp để mang đến cho khách hàng những sản phẩm có chất lượng hàng đầu. Bên cạnh đó, uy tín của chúng tôi càng được khẳng định thêm bởi các đối tác có tên tuổi trong lĩnh vực bất động sản. Tất cả những đối tác này đều đóng vai trò quan trọng trong việc khẳng định vị thế của chúng tôi trên thị trường nội thất cao cấp. </p>
+      </div>
+      </div>
+    </div>
+    <div class="carousel-container" style="margin-bottom: 20px;">
+		<section class="image-row">
+      <img src="images/doitac/doitac1.jpg" alt="anh1">
+      <img src="images/doitac/doitac2.jpg" alt="anh2">
+      <img src="images/doitac/doitac3.jpg" alt="anh3">
+      <img src="images/doitac/doitac4.png" alt="anh4">
+      <img src="images/doitac/doitac5.jpg" alt="anh5">
+    </section>
+  </div>
+  <form action="submit.php" method="post" >
+    <div class="form-container">
+      <h2 class="form-title">LIÊN HỆ TƯ VẤN VÀ NHẬN BÁO GIÁ</h2>
+    <div class="form-group">
+      <input type="text" id="ten" name="ten" required placeholder="Họ và tên" required style="border: 2px solid #563E35;">
+    </div>
+
+    <div class="form-group">
+      <input type="tel" id="sdt" name="sdt" required placeholder="Số điện thoại" required style="border: 2px solid #563E35;">
+    </div>
+    <div class="form-group">
+      <input type="text" id="diachi" name="diachi" required placeholder="Địa chỉ" required style="border: 2px solid #563E35;">
+    </div>
+
+    <div class="form-group">
+      <textarea id="mota" name="mota" rows="5" required placeholder="Mô tả" style="border: 2px solid #563E35;"></textarea>
+    </div>
+
+    <button type="submit">GỬI THÔNG TIN LIÊN HỆ</button>
+  </div>
+  </form>
+	
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-3">
+					<h2 style="text-align: center; font-weight:500;">Góc Cảm Hứng Và Ý Tưởng Về Không Gian Sống</h2>
+        </div>	
+		<div class="row">
+			<div class="col-md-4 ftco-animate">
+			  <div class="blog-entry">
+				<a href="https://tapchinoithatonline.com/cach-trang-tri-phong-khach-nha-cap-4" class="block-20" style="background-image: url('images/noi-that-phong-bep-luxury-3.jpg');">
+				</a>
+				<div class="text d-flex py-4">
+				  <div class="meta mb-3">
+					<div><a href="https://tapchinoithatonline.com/cach-trang-tri-phong-khach-nha-cap-4">26/1/2002</a></div>
+					<div><a href="https://tapchinoithatonline.com/cach-trang-tri-phong-khach-nha-cap-4">Thủy Nguyễn</a></div>
+					<div><a href="https://tapchinoithatonline.com/cach-trang-tri-phong-khach-nha-cap-4" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+				  </div>
+				  <div class="desc pl-3">
+					  <h3 class="heading"><a href="https://tapchinoithatonline.com/cach-trang-tri-phong-khach-nha-cap-4">5 Cách trang trí phòng khách nhà cấp 4 đậm chất Châu Âu</a></h3>
+					</div>
+				</div>
+			  </div>
+			</div>
+
+			<div class="col-md-4 ftco-animate">
+			  <div class="blog-entry" data-aos-delay="100">
+				<a href="https://tapchinoithatonline.com/cach-bo-tri-phong-ngu-nho" class="block-20" style="background-image: url('images/noi-that-phong-bep-luxury-4.jpg');">
+				</a>
+				<div class="text d-flex py-4">
+				  <div class="meta mb-3">
+					<div><a href="https://tapchinoithatonline.com/cach-bo-tri-phong-ngu-nho">26/1/2023</a></div>
+					<div><a href="https://tapchinoithatonline.com/cach-bo-tri-phong-ngu-nho">Thủy Nguyễn</a></div>
+					<div><a href="https://tapchinoithatonline.com/cach-bo-tri-phong-ngu-nho" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+				  </div>
+				  <div class="desc pl-3">
+					  <h3 class="heading"><a href="https://tapchinoithatonline.com/cach-bo-tri-phong-ngu-nho">5 Cách Bố Trí Phòng Ngủ Nhỏ Hiện Đại 5-10m2 Đơn Giản</a></h3>
+					</div>
+				</div>
+			  </div>
+			</div>
+
+			<div class="col-md-4 ftco-animate">
+			  <div class="blog-entry" data-aos-delay="200">
+				<a href="https://tapchinoithatonline.com/cach-trang-tri-bep-gon-gang" class="block-20" style="background-image: url('images/noi-that-phong-khach-luxury-4.jpg');">
+				</a>
+				<div class="text d-flex py-4">
+				  <div class="meta mb-3">
+					<div><a href="https://tapchinoithatonline.com/cach-trang-tri-bep-gon-gang">14/09/2022</a></div>
+					<div><a href="https://tapchinoithatonline.com/cach-trang-tri-bep-gon-gang">Thủy Nguyễn</a></div>
+					<div><a href="https://tapchinoithatonline.com/cach-trang-tri-bep-gon-gang " class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+				  </div>
+				  <div class="desc pl-3">
+					  <h3 class="heading"><a href="https://tapchinoithatonline.com/cach-trang-tri-bep-gon-gang ">Cách Trang Trí Bếp Gọn Gàng Đơn Giản Mà Đẹp</a></h3>
+					</div>
+				</div>
+			  </div>
+			</div>
+			</div>
+		</section>
+
+		<section class="ftco-section ftc-no-pb">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-md-5 p-md-5 img img-2 order-md-last" style="background-image: url(images/anhnen4.jpg);">
+					</div>
+					<div class="col-md-7 wrap-about pb-md-5 ftco-animate">
+	          <div class="heading-section mb-md-5 pl-md-5 heading-section-with-line">
+	          	<div class="pr-md-5 mr-md-5">
+		          	<span class="subheading">Tinh Tế</span>
+		            <h2 class="mb-4">Chúng Tôi Mong Muốn Tạo Ra Sự Tinh Tế</h2>
+	            </div>
+	          </div>
+	          <div class="pr-md-5 mr-md-5">
+							<p>Với phương châm "Chúng tôi mong muốn tạo ra sự tinh tế", LuxeLiving Interior luôn đặt sự tinh tế lên hàng đầu trong từng sản phẩm và dịch vụ. Chúng tôi không chỉ mang đến những thiết kế đẹp mắt mà còn chú trọng đến từng chi tiết nhỏ nhất, đảm bảo sự hài hòa và đẳng cấp trong mọi không gian sống và làm việc. Mỗi sản phẩm của chúng tôi là kết quả của sự kết hợp hoàn hảo giữa chất liệu cao cấp, kỹ thuật tiên tiến và tâm huyết của đội ngũ thiết kế, nhằm mang lại cho khách hàng những trải nghiệm độc đáo và tinh tế nhất.</p>
+              <p>Và với phương châm đó, chúng tôi đã làm nên sự khác biệt trở thành và giữ vững vị trí thương hiệu nội thất hàng đầu Việt Nam. Chất lượng và dịch vụ luôn được đặt lên hàng đầu để chọn lọc sản phẩm thật kỹ lưỡng tạo ra không gian sống hài hòa, sang trọng, tinh tế </p>
+							<p><a href="blog.html" class="btn-custom">Tìm Hiểu Thêm <span class="ion-ios-arrow-forward"></span></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <footer class=" ftco-footer ftco-bg-dark ftco-section">
+			<div class="container">
+				<div class="row mb-5" style="margin-bottom: 0rem !important;">
+					<div class="col-md">
+						<div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+							<h2 class="ftco-heading-2">Hệ thống chi nhánh</h2>
+							<a href="https://www.facebook.com/kenli.vn/" class="ftco-heading-2" style="color: white;">Showroom Hà Nội</a>
+							<p>- Trụ sở & Showroom 1: Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+								<br><br>
+								- Showroom 2: Số 4 Dịch Vọng Hậu, Q. Cầu Giấy
+								<br><br>
+								- Showroom 3: Số 18 Dịch Vọng Hậu, Q. Cầu Giấy
+							</p>
+							<a href="https://www.facebook.com/kenlihcm/" class="ftco-heading-2" style="color: white;">Showroom HCM</a>
+							<p>- Trụ sở & Showroom: 69 - 71 Nguyễn Cơ Thạch, Khu đô thị Sala, An Lợi
+								Đông, Quận 2
+							</p>
+						</div>
+					</div>
+	  
+					<div class="col-md">
+						<div class="ftco-footer-widget mb-4" style="margin-left: 20%; margin-top: 40px;">
+							<h2 class="ftco-heading-2">Chính sách mua hàng</h2>
+							<p>Hình thức thanh toán
+							</p>
+							<p>Chính sách giao hàng
+							</p>
+							<p>Chính sách bảo hành
+							</p>
+							<p>Chính sách bảo mật
+							</p>
+							<br>
+						</div>
+					</div>
+					<div class="col-md">
+						<div class="ftco-footer-widget mb-4" style="    margin-top: 40px;">
+							<h2 class="ftco-heading-2">Liên Hệ</h2>
+							<p>Công ty cổ phần đầu tư Phúc Thịnh
+							</p>
+							<p>Hotline: 0948426006
+							</p>
+							<p>Tổng đài CSKH: 1800 6398
+							</p>
+							<p>Email: info@Phúc Thịnh.vn
+							</p>
+							<br>
+							<h2 class="ftco-heading-2">Kết nối với Phúc Thịnh</h2>
+							<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3" style="margin-top: -22px !important;">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61560753257228"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-pinterest"></span></a></li>
+								<li class="ftco-animate"><a href="https://www.instagram.com/luxeliving2024_?igsh=MWt4dWJkbXhuOHZxYw%3D%3D"><span class="icon-instagram"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-youtube"></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+	  
+						<p style="    margin-top: -69px;">Công ty cổ phần đầu tư Phúc Thịnh <br>
+							Số 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội
+						</p>
+					</div>
+				</div>
+				<div class="row">
+				  <div class="col-md-12 text-center">
+		
+					
+				  </div>
+				</div>
+			</div>
+		</footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+<!--Cài chatbot-->	
+  <script type="text/javascript" src="https://cdn.fchat.vn/assets/embed/webchat.js?id=6673fcc8cc517a261e08415c" async="async"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
